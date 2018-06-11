@@ -1,7 +1,7 @@
 {
   "name": "proofhub-cli",
   "description": "An unofficial CLI wrapper for the proofhub API (v3) written in NodeJS",
-  "version": "0.1.0",
+  "version": "0.1.0-0",
   "scripts": {
     "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s -r 0",
     "lint": "eslint bin lib src",
