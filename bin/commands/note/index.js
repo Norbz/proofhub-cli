@@ -2,26 +2,14 @@
 
 module.exports = {
 
-  command: 'list',
-  aliases: ['ls'],
-  describe: 'Lists all files in the directory',
+  command: 'note <project>',
+  aliases: ['nt'],
+  describe: 'All notes for a given project and notebook',
 
   builder: {
-    all: {
-      alias: 'a',
-      describe: 'Display all files',
-      default: true
-    },
-    dots: {
-      alias: 't',
-      describe: 'Show only dot files',
-      demandOption: true
-    },
-    size: {
-      alias: 's',
-      describe: 'Specify the file size in t-shirt format',
-      choices: ['xs', 's', 'm', 'l', 'xl'],
-      default: 'm',
+    book: {
+      alias: 'b',
+      describe: 'Rstrict the display of the note inside a given Notebook ID',
     }
   },
 

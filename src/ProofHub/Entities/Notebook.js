@@ -1,14 +1,14 @@
 const BaseEntity = require('./BaseEntity');
-const File = require('../Entities/File');
+const Note = require('../Entities/Note');
 
 const endpoint = '/api/v3/projects/';
-class Project extends BaseEntity {
+class Notebook extends BaseEntity {
 
-    createFile(id = undefined) {
+    createNote(id = undefined) {
         if(this.id){
-            return new File(this, id);
+            return new Note(this, id);
         } else {
-            throw new Error("Must provide an ID before creating a file")
+            throw new Error("Must provide a Notebook ID before creating a Note")
         }
     }
 
@@ -26,14 +26,9 @@ class Project extends BaseEntity {
         console.info(res.data);
     }
 
-
-
-
-    /// getters
-
-    get folder(){
+    get notebook() {
         return this;
     }
 }
 
-module.exports = Project;
+module.exports = Notebook;

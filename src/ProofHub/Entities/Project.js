@@ -1,5 +1,6 @@
 const BaseEntity = require('./BaseEntity');
 const Folder = require('./Folder');
+const Notebook = require('./Notebook');
 
 const endpoint = '/api/v3/projects';
 class Project extends BaseEntity {
@@ -15,6 +16,14 @@ class Project extends BaseEntity {
             return new Folder(this, id);
         } else {
             throw new Error("Must provide an ID before creating a file")
+        }
+    }
+
+    createNotebook(id = undefined) {
+        if(this.id){
+            return new Notebook(this, id);
+        } else {
+            throw new Error("Must provide an ID before creating a notebook")
         }
     }
 

@@ -2,9 +2,9 @@
 
 module.exports = {
 
-  command: 'upload',
-  aliases: ['up'],
-  describe: 'Upload a file to the given project',
+  command: 'file <project>',
+  aliases: ['f'],
+  describe: 'List all file in a given project',
 
   builder: {
     proj: {

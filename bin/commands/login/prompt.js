@@ -13,16 +13,17 @@ module.exports = function(app){
         type: 'input',
         name: 'token',
         message: chalk.blue(`Please enter your proofhub account token:`)
-      }
+    },
+    {
+        type: 'input',
+        name: 'url',
+        message: chalk.blue(`Please enter your proofhub url without the https:// (ex 'mycompany.proofhub.com):`)
+    },
+
   ];
 
   return inquirer.prompt(questions)
   .then((answers) => {
-    console.log(
-      `Answers received:\n` +
-      `Mail: ${answers.email} \n`+
-      `token: ${answers.token} \n`
-    );
     return Object.assign(app, answers);
   })
 }

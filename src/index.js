@@ -30,12 +30,21 @@ class App {
         await ph.createProject().fetchAll();
         break;
 
+      // Notes
+      case "note:create":
+        await ph.createProject(argv.project)
+        .createNotebook(argv.notebook)
+        .createNote()
+        .setTitle(argv.title)
+        .save();
+        break;
+
         // File
       case "file:upload":
         await ph.createProject(argv.project)
-                .createFolder(argv.folder)
-                .createFile()
-                .upload(argv.filename);
+        .createFolder(argv.folder)
+        .createFile()
+        .upload(argv.filename);
         break;
     }
   }

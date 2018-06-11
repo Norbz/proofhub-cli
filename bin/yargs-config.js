@@ -62,7 +62,7 @@ module.exports = function(yargs) {
       chalk.green(`For more information on how to use this application, please visit https://github.com/Norbz/proofhub-cli\n`)
     )
 
-    .showHelpOnFail(false, 'Specify --help for available options')
+    .showHelpOnFail(true, 'Specify --help for available options')
 
     /**
      * Restrict any undefined command
