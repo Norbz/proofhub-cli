@@ -1,5 +1,5 @@
 const axios = require('axios');
-
+const chalk = require('chalk')
 require('dotenv').config()
 
 const Project = require("./Entities/Project")
@@ -25,7 +25,9 @@ class ProofHub {
                     'Content-Type': 'application/json'
                 }
               });
-        } // todo = read file
+        } else {
+            chalk.red("You need to be logged in before using the CLI. \nall the 'login' subcommand to log into your account, or see the documentation on Github if you want to be logged via environment variables")
+        }
     }
 
     createProject(id=undefined){
